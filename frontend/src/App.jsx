@@ -3,7 +3,7 @@ import AuthProvider from "./context/AuthProvider";
 import ProtectedRoute from "./context/ProctedRoute";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./components/Dashboard/dashboard";
 import Home from "./components/Home/home";
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
             path="/dashboard"
             element={
               <ProtectedRoute roles={["admin", "user"]}>
-                <Dashboard />
+                <Dashboard user={user} />
               </ProtectedRoute>
             }
           />
